@@ -24,7 +24,7 @@ class color {
 		string color_arg(string);
 
 		string color_arg(int, unsigned short, unsigned short);
-		string color_arg(string, unsigned short, unsigned short = 44);
+		string color_arg(string, unsigned short = 37, unsigned short = 44);
 	private:
 		string co_prefix;
 		string co_postfix;
