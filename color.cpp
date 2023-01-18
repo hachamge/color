@@ -3,30 +3,6 @@ using std::to_string;
 
 color::color(): co_prefix("\033[44m"), co_postfix("\033[0m") {}
 
-//return a string including background:blue
-string color::color_arg(int input) {
-	string co_str = co_prefix + to_string(input);
-	co_str.resize(co_str.size() + 8);
-	co_str.replace(co_str.length(), 1, co_postfix);
-	return co_str;
-}
-
-//return a string including background:blue
-string color::color_arg(char input) {
-	string co_str = co_prefix + to_string(input);
-	co_str.resize(co_str.size() + 8);
-	co_str.replace(co_str.length(), 1, co_postfix);
-	return co_str;
-}
-
-//return a string including background:blue
-string color::color_arg(string input) {
-	string co_str = co_prefix + input;
-	co_str.resize(co_str.size() + 8);
-	co_str.replace(co_str.length(), 1, co_postfix);
-	return co_str;
-}
-
 void color::change_foreground(unsigned short co) {
 	string co_str = "\033[";
 	co_str.resize(co_str.length() + 4);

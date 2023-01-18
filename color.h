@@ -19,11 +19,7 @@ class color {
 		void change_foreground(unsigned short);
 		void change_background(unsigned short);
 		
-		string color_arg(int);
-		string color_arg(char);
-		string color_arg(string);
-
-		string color_arg(int, unsigned short, unsigned short);
+		string color_arg(int, unsigned short = 37, unsigned short = 44);
 		string color_arg(string, unsigned short = 37, unsigned short = 44);
 	private:
 		string co_prefix;
