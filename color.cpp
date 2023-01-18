@@ -36,21 +36,13 @@ string color::color_arg(int input, unsigned short fg, unsigned short bg) {
 	return co_str;
 }
 
-//print foreground:fg, colors
-void color::print_fg() {
-	array<unsigned short, 8> foreground = {30, 31, 32, 33, 34, 35, 36, 37};
-	for(unsigned short iterator1: foreground) {
-		change_foreground(iterator1);
-		cout << iterator1 << ' ';
-	}
-}
-
-//print background:bg, colors
-void color::print_bg() {
-	array<unsigned short, 8> background = {40, 41, 42, 43, 44, 45, 46, 47};
-	for(unsigned short iterator2: background) {
-		change_background(iterator2);
-		cout << iterator2 << ' ';
-	}
+void color::print_colors() {
+	array<unsigned short, 8> fg = {30, 31, 32, 33, 34, 35, 36, 37};
+	array<unsigned short, 8> bg = {40, 41, 42, 43, 44, 45, 46, 47};	
+	for(unsigned short ind: fg)
+		cout << color_arg(ind, ind);
+	cout << endl << endl;
+	for(unsigned short ind: bg)
+		cout << color_arg(ind, 37, ind);
 	cout << endl;
 }

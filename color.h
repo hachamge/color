@@ -14,8 +14,7 @@ class color {
 	public:
 		color();
 		
-		void print_fg();
-		void print_bg();
+		void print_colors();
 		void change_foreground(unsigned short);
 		void change_background(unsigned short);
 		
