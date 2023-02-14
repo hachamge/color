@@ -30,10 +30,15 @@ string color::color_arg(string input, unsigned short fg, unsigned short bg) {
 
 //return a string including foreground:fg, and background:bg 
 string color::color_arg(int input, unsigned short fg, unsigned short bg) {
-	string co_str = "\033[" + to_string(fg) + ";" + to_string(bg) + "m";
-	co_str.resize(co_str.length() + to_string(input).length() + 1);
-	co_str += (to_string(input) + "\033[0m");
-	return co_str;
+	try {
+		if (fg < 30 || bg < 40) throw("Invalid color in sequence");
+		string co_str = "\033[" + to_string(fg) + ";" + to_string(bg) + "m";
+		co_str.resize(co_str.length() + to_string(input).length() + 1);
+		co_str += (to_string(input) + "\033[0m");
+		return co_str;
+	} catch (const char * err) {
+		cerr << color_arg(err, 37, 41) << endl;
+	}
 }
 
 void color::print_colors() {
